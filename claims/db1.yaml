@@ -1,0 +1,17 @@
+apiVersion: aws.platform.upbound.io/v1alpha1
+kind: SQLInstance
+metadata:
+  name: db-1
+  namespace: default
+spec:
+  parameters:
+    engine: postgres
+    engineVersion: '15.5'
+    region: us-west-1
+    storageGB: 10
+    networkRef:
+      id: db-1
+    passwordSecretRef:
+      key: secret
+      name: secret
+      namespace: default
